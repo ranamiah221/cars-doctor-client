@@ -5,7 +5,7 @@ import { AuthContext } from '../../components/provider/AuthProvider/AuthProvider
 
 const SignUp = () => {
   const {createUser}=useContext(AuthContext)
-  console.log(createUser)
+  
     const handleSignup=(event)=>{
         event.preventDefault();
         const form=event.target;
