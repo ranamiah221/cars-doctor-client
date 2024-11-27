@@ -8,6 +8,7 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import ServiceDetails from "../ServiceDetails/ServiceDetails";
 import CheckOut from "../CheckOut/CheckOut";
 import Booking from "../../pages/Booking/Booking";
+import PrivateRoute from "./PrivateRoute";
 
 
 const Router = createBrowserRouter([
@@ -22,7 +23,7 @@ const Router = createBrowserRouter([
             },
             {
                 path:'/services',
-                element:<Services></Services>
+                element:<PrivateRoute><Services></Services></PrivateRoute>
             },
             {
                 path:'/service/:id',
@@ -36,7 +37,7 @@ const Router = createBrowserRouter([
             },
             {
                 path:'/booking',
-                element:<Booking></Booking>
+                element:<PrivateRoute><Booking></Booking></PrivateRoute>
             },
 
 
