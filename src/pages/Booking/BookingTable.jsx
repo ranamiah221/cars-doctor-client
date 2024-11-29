@@ -1,8 +1,8 @@
 import React from "react";
 
-const BookingTable = ({ booking, handleBookingDelete }) => {
+const BookingTable = ({ booking, handleBookingDelete, handleBookingConfirm }) => {
 
-  const { _id, title, img, date } = booking;
+  const { _id, title, img, date, status } = booking;
   return (
     <>
       {/* row 1 */}
@@ -35,9 +35,14 @@ const BookingTable = ({ booking, handleBookingDelete }) => {
         <td>{date}</td>
 
         <th>
-          <button className="btn bg-[#FF3811] text-white btn-xs">
-            Pending
-          </button>
+            {
+                status === 'confirm'? <button className="btn btn-sm bg-[#FF3811] text-white">
+                confirmed
+              </button> :<button onClick={()=>handleBookingConfirm(_id)} className="btn bg-[#FF3811] text-white btn-xs">
+                Pending
+              </button>
+            }
+          
         </th>
       </tr>
     </>
