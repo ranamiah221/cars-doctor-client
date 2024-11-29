@@ -15,6 +15,7 @@ const Navbar = () => {
     {
       user? <>
       <li><NavLink to='/booking'>My Booking</NavLink></li>
+      <li><NavLink to='/addService'>Add Services</NavLink></li>
       <li><button onClick={handleLogOut}>Log Out</button></li>
       </> : <li><NavLink to='/signin'>Sign In</NavLink></li>
     }

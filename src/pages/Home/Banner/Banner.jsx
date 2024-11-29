@@ -28,7 +28,7 @@ const Banner = () => {
           <a href="#slide4" className="btn btn-circle">
             ❮
           </a>
-          <a href="#slide2" className="btn btn-circle">
+          <a href="#slide2" className="btn btn-circle bg-red-500 hover:bg-red-400 border-none text-white">
             ❯
           </a>
         </div>
@@ -53,7 +53,7 @@ const Banner = () => {
           <a href="#slide1" className="btn btn-circle">
             ❮
           </a>
-          <a href="#slide3" className="btn btn-circle">
+          <a href="#slide3" className="btn btn-circle bg-red-500 hover:bg-red-400 border-none text-white">
             ❯
           </a>
         </div>
@@ -78,7 +78,7 @@ const Banner = () => {
           <a href="#slide2" className="btn btn-circle">
             ❮
           </a>
-          <a href="#slide4" className="btn btn-circle">
+          <a href="#slide4" className="btn btn-circle bg-red-500 hover:bg-red-400 border-none text-white">
             ❯
           </a>
         </div>
@@ -103,7 +103,7 @@ const Banner = () => {
           <a href="#slide3" className="btn btn-circle">
             ❮
           </a>
-          <a href="#slide6" className="btn btn-circle">
+          <a href="#slide6" className="btn btn-circle bg-red-500 hover:bg-red-400 border-none text-white">
             ❯
           </a>
         </div>
@@ -128,7 +128,7 @@ const Banner = () => {
           <a href="#slide4" className="btn btn-circle">
             ❮
           </a>
-          <a href="#slide6" className="btn btn-circle">
+          <a href="#slide6" className="btn btn-circle bg-red-500 hover:bg-red-400 border-none text-white">
             ❯
           </a>
         </div>
@@ -153,7 +153,7 @@ const Banner = () => {
           <a href="#slide5" className="btn btn-circle">
             ❮
           </a>
-          <a href="#slide1" className="btn btn-circle">
+          <a href="#slide1" className="btn btn-circle bg-red-500 hover:bg-red-400 border-none text-white">
             ❯
           </a>
         </div>
