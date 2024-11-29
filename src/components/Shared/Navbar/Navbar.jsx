@@ -59,6 +59,9 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        {
+          user?.email ? <button className="mr-2 px-2 py-1 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-700 text-white uppercase"> {user?.email.slice(0,2)}</button>: " "
+        }
         <button className="btn btn-outline btn-warning">Appointment</button>
       </div>
     </div>
