@@ -4,17 +4,25 @@ import { useNavigation } from "react-router-dom";
 import DefaultBanner from "../../components/Shared/DefaultBanner/DefaultBanner";
 import BookingTable from "./BookingTable";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Booking = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
 
+  const url = `http://localhost:5000/booking?email=${user?.email}`
+
   useEffect(() => {
-    fetch(`http://localhost:5000/booking?email=${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setBookings(data);
-      });
+    axios.get(url, {withCredentials: true})
+    .then(res=>{
+      setBookings(res.data)
+    })
+
+    // fetch(url)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setBookings(data);
+    //   });
   }, [user]);
 
   const handleBookingDelete = (id) => {

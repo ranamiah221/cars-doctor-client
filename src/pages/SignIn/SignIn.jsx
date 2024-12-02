@@ -2,27 +2,29 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assets/images/login/login.svg";
 import { AuthContext } from "../../components/provider/AuthProvider/AuthProvider";
 import { useContext } from "react";
+import Swal from "sweetalert2";
+import axios from "axios";
 const SignIn = () => {
-  const {signIn}=useContext(AuthContext)
-  const navigate=useNavigate();
-  const location=useLocation();
+  const { signIn } = useContext(AuthContext);
 
-    const handleSignIn=(event)=>{
-        event.preventDefault();
-        const form = event.target;
-        const name = form.email.value;
-        const password = form.password.value;
-        signIn(name, password)
-        .then(result=>{
-          alert('login successful')
-          navigate(location.state ? location.state : '/');
-        })
-        .catch(error=>{
-          alert(error.message)
-        })
+  const navigate = useNavigate();
+  const location = useLocation();
 
-
-    }
+  const handleSignIn = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    signIn(email, password)
+      .then((result) => {
+        const user  = result.user;
+        Swal.fire("User Login Successful!");
+        navigate(location.state ? location.state : '/');     
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
   return (
     <div className="hero bg-base-200 min-h-screen ">
       <div className="hero-content flex-col lg:flex-row">
@@ -57,11 +59,19 @@ const SignIn = () => {
               />
             </div>
             <div className="form-control mt-6">
-              <button type="submit" className="btn text-white bg-[#FF3811] hover:bg-[#FF3476]">
+              <button
+                type="submit"
+                className="btn text-white bg-[#FF3811] hover:bg-[#FF3476]"
+              >
                 Sign In
               </button>
             </div>
-            <p className="p-2 text-center">New here cars doctor please <Link to='/signup' className="text-[#FF3811] font-bold underline">signup</Link></p>
+            <p className="p-2 text-center">
+              New here cars doctor please{" "}
+              <Link to="/signup" className="text-[#FF3811] font-bold underline">
+                signup
+              </Link>
+            </p>
           </form>
         </div>
       </div>
